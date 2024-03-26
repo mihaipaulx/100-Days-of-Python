@@ -5,3 +5,6 @@
 
 # Jupyter Lab
 /.jupyter/
+
+# Ignore compiled Python bytecode
+__pycache__/
