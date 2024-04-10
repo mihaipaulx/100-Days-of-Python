@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+{% import "bootstrap/wtf.html" as wtf %}
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>No Watermark</title>
+    <link href="static/favicon.ico" rel="icon">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet">
+    <link href="{{ url_for('static', filename='styles.css') }}" rel="stylesheet">
+</head>
+
+<body>
+<div class="tiktok">
+
+    <div class="container">
+        <div class="intro">
+
+            <div class="alert alert-secondary alert-dismissible fade show" role="alert">
+                Iphone users need to download from Safari
+                <button aria-label="Close" class="close" data-dismiss="alert" type="button">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+
+
+            {% if error == True%}
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                Oops, we've run into an issue. Please ensure that you enter a valid link.
+                <button aria-label="Close" class="close" data-dismiss="alert" type="button">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            {% else %}
+
+            {% endif %}
+
+            <h2 class="text-center">Download Tiktok video without Watermark</h2>
+            <p class="text-center">A part of #100DaysOfCode by Ryn</p>
+
+        </div>
+        <!--        <form action="{{ url_for('home') }}" method="post">-->
+        <form action="{{ url_for('home') }}" class="form-inline" method="post">
+            <div class="form-group"><input class="form-control" name="link" placeholder="Tiktok Link"></div>
+            <div class="form-group">
+                <button class="btn btn-primary" type="submit">Download</button>
+            </div>
+        </form>
+        <!--        </form>-->
+    </div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
